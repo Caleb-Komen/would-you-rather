@@ -20,20 +20,20 @@ class App extends Component {
   render(){
     return (
       <Router>
-      <Fragment>
-        <LoadingBar />
-        <div className='container'>
-          <Nav />
-          <Routes>
-            <Route path='/' exact element={<Home />} />
-            <Route path='/add' element={<NewQuestion />} />
-            <Route path='/leaderboard' element={<LeaderBoard />} />
-            <Route path='/signin' element={<SignIn />} />
-            <Route path='/questions/:id' element={<QuestionPage />} />
-            <Route path='/result/:id' element={<QuestionResult />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </div>
+        <Fragment>
+          <LoadingBar />
+          <div className='container'>
+            <Nav />
+            <Routes>
+              <Route path='/' exact element={<Home />} />
+              <Route path='/add' element={<NewQuestion />} />
+              <Route path='/leaderboard' element={<LeaderBoard />} />
+              <Route path='/signin' element={<SignIn />} />
+              <Route path='/questions/:id' element={<QuestionPage />} />
+              <Route path='/result/:id' element={<QuestionResult />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </div>
       </Fragment>
     </Router>
     );
