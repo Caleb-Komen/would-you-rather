@@ -7,7 +7,7 @@ import QuestionResult from './QuestionResult';
 import NewQuestion from './NewQuestion';
 import LeaderBoard from './LeaderBoard';
 import QuestionPage from './QuestionPage';
-import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoadingBar } from 'react-redux-loading-bar';
 import Nav from './Nav';
 import NotFound from './NotFound';
@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   render(){
-    const { authedUser } = this.props
     return (
       <Router>
       <Fragment>
