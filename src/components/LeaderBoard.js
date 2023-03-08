@@ -6,9 +6,9 @@ class LeaderBoard extends React.Component {
     render() {
         const { authedUser, users } = this.props
 
-        if (authedUser === null) {
-            return <Navigate replace to="/signin" />;
-        }
+        // if (authedUser === null) {
+        //     return <Navigate replace to="/signin" />;
+        // }
 
         return (
             <div>

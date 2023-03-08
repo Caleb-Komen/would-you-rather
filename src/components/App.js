@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LoadingBar } from 'react-redux-loading-bar';
 import Nav from './Nav';
 import NotFound from './NotFound';
+import RequireAuth from './RequireAuth';
 
 class App extends Component {
   componentDidMount() {
@@ -25,12 +26,32 @@ class App extends Component {
           <div className='container'>
             <Nav />
             <Routes>
-              <Route path='/' exact element={<Home />} />
-              <Route path='/add' element={<NewQuestion />} />
-              <Route path='/leaderboard' element={<LeaderBoard />} />
+              <Route path='/' exact element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              } />
+              <Route path='/add' element={
+                <RequireAuth>
+                  <NewQuestion />
+                </RequireAuth>
+              } />
+              <Route path='/leaderboard' element={
+                <RequireAuth>
+                  <LeaderBoard />
+                </RequireAuth>
+              } />
               <Route path='/signin' element={<SignIn />} />
-              <Route path='/questions/:id' element={<QuestionPage />} />
-              <Route path='/result/:id' element={<QuestionResult />} />
+              <Route path='/questions/:id' element={
+                <RequireAuth>
+                  <QuestionPage />
+                </RequireAuth>
+              } />
+              <Route path='/result/:id' element={
+                <RequireAuth>
+                  <QuestionResult />
+                </RequireAuth>
+              } />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </div>

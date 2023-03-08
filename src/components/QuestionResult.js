@@ -1,12 +1,18 @@
 import React from "react"
 import { connect } from "react-redux"
 import { useParams } from "react-router-dom"
+import NotFound from "./NotFound"
 
 function QuestionResult(props) {
     const { id } = useParams()
     const { authedUser, users, questions } = props
 
     const question = questions[id]
+
+    if (!question) {
+        return <NotFound />
+    }
+    
     const user = users[question.author]
 
     const selectedOption = authedUser.answers[question.id]

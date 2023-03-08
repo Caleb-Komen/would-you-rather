@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { connect } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { handleAnswerQuestion } from "../actions/shared"
+import NotFound from "./NotFound"
 
 function QuestionPage(props) {
     const [selectedOption, setSelectedOption] = useState('')
@@ -12,6 +13,11 @@ function QuestionPage(props) {
     const { users, questions } = props
 
     const question = questions[id]
+    
+    if (!question) {
+        return <NotFound />
+    }
+
     const user = users[question.author]
 
     const handleChange = (e) => {

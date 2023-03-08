@@ -7,9 +7,9 @@ import Question from './Question'
 class Home extends React.Component {
     render() {
         const { authedUser, users, questions } = this.props
-        if (authedUser === null) {
-            return <Navigate replace to="/signin" />;
-        }
+        // if (authedUser === null) {
+        //     return <Navigate replace to="/signin" />;
+        // }
         const answeredQuiz = Object.keys(users[authedUser].answers).map((qId) => (questions[qId])).sort((a,b)=> b.timestamp - a.timestamp)
         const unAnsweredQuiz = Object.keys(questions).filter((qId) => (
             !Object.keys(users[authedUser].answers).includes(qId)

@@ -43,9 +43,9 @@ class NewQuestion extends React.Component {
         const { optionOne, optionTwo } = this.state
         const { authedUser } = this.props
 
-        if (authedUser === null) {
-            return <Navigate replace to="/signin" />;
-        }
+        // if (authedUser === null) {
+        //     return <Navigate replace to="/signin" />;
+        // }
 
         if (this.state.toHome === true) {
             return <Navigate to='/' replace={true} />
