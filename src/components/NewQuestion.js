@@ -41,11 +41,6 @@ class NewQuestion extends React.Component {
 
     render() {
         const { optionOne, optionTwo } = this.state
-        const { authedUser } = this.props
-
-        // if (authedUser === null) {
-        //     return <Navigate replace to="/signin" />;
-        // }
 
         if (this.state.toHome === true) {
             return <Navigate to='/' replace={true} />
@@ -84,10 +79,4 @@ class NewQuestion extends React.Component {
     }
 }
 
-function mapStateToProps ({ authedUser }) {
-    return {
-      authedUser
-    }
-  }
-
-export default connect(mapStateToProps)(NewQuestion)
+export default connect()(NewQuestion)

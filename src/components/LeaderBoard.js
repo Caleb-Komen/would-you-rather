@@ -1,14 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Navigate } from "react-router-dom";
 
 class LeaderBoard extends React.Component {
     render() {
-        const { authedUser, users } = this.props
-
-        // if (authedUser === null) {
-        //     return <Navigate replace to="/signin" />;
-        // }
+        const { users } = this.props
 
         return (
             <div>
@@ -34,9 +29,8 @@ class LeaderBoard extends React.Component {
     }
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ users }) {
     return {
-        authedUser,
         users: Object.values(users).sort((a, b) => (
             (Object.keys(b.answers).length + b.questions.length) - (Object.keys(a.answers).length + a.questions.length)
         ))
